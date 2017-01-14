@@ -29,7 +29,7 @@ const booksFromDiv = function(div) {
 
 const saveBooks = function(book) {
     const fs = require('fs')
-    const path = 'book.text'
+    const path = 'book.txt'
     const s = JSON.stringify(book, null, 2)
     fs.writeFile(path, s, function(error){
       if (error !== null) {
@@ -40,17 +40,17 @@ const saveBooks = function(book) {
     })
 }
 
+const books = []
 const booksFromUrl = function(url) {
-    const books = []
     request(url, function(error, response, body){
         if(error == null && response.statusCode == 200) {
           const e = cheerio.load(body)
-          const bookDivs = e('table')
+          const bookDivs = e('.item')
           for(let i = 0; i < bookDivs.length; i++) {
-            let element = booksDivs[i]
+            let element = bookDivs[i]
             const div = e(element).html()
             const b = booksFromDiv(div)
-            books.push(m)
+            books.push(b)
           }
           log('book', books.length)
         }else {
