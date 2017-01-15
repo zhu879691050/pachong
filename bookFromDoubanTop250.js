@@ -6,13 +6,7 @@ var log = function() {
     console.log.apply(console, arguments)
 }
 
-var e = function(s) {
-    return document.querySelector(s)
-}
 
-var es = function(s) {
-    return document.querySelectorAll(s)
-}
 
 const Book = function() {
     this.name = ''
