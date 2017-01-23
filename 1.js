@@ -45,7 +45,7 @@ const movieFromUrl = function(url) {
 
 const saveMovies = function(movies) {
     const fs = require('fs')
-    const path = '动画.txt'
+    const path = '-299.txt'
     const data = JSON.stringify(movies, null, 2)
     fs.writeFile(path, data, function(error){
         if (error !== null) {
@@ -56,7 +56,7 @@ const saveMovies = function(movies) {
     })
 }
 const __main = function() {
-    const url = 'https://movie.douban.com/tag/%E5%8A%A8%E7%94%BB?start=0&type=T'
+    const url = 'https://movie.douban.com/tag/%E5%8A%A8%E7%94%BB?start=5960&type=T'
     movieFromUrl(url)
 }
 

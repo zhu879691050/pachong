@@ -38,11 +38,11 @@ const saveMovies = function(movies) {
 }
 
 const __main = function(){
-    const j = 5
+    const j = 300
     for (var i = 0; i < j; i++) {
-      const path = i + '.txt'
+      const path = '_' + i + '.txt'
       handle(path)
-      log('00000', moviesAll)
+      log('00000', moviesAll.length)
     }
 }
 
